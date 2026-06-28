@@ -48,7 +48,6 @@ def run_groupdna_analysis(file_path):
     unique_days_active = df.groupby('sender')['date'].nunique()
     silent_days_count = total_days - unique_days_active
 
-    # --- DYNAMIC LOOKUPS FOR PERSONALITY ARCHETYPES ---
     top_spammer = burst_streaks.idxmax() if not burst_streaks.empty else "N/A"
     top_caring = caring_score.idxmax() if not caring_score.empty else "N/A"
     top_night_owl = night_owl_pct.idxmax() if not night_owl_pct.empty else "N/A"
